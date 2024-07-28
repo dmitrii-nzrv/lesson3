@@ -5,10 +5,17 @@
 //  Created by Dmitrii Nazarov on 25.07.2024.
 //
 
+// протокол создается в том классе который делигирует свои функции
+
+protocol
+
 import UIKit
 
-class ViewController: UIViewController {
+class MainViewController: UIViewController {
 
+    var descriptionText: String?
+    
+    
     lazy var viewWidth = view.frame.width
     lazy var viewHeight = view.frame.height
     
@@ -46,9 +53,9 @@ class ViewController: UIViewController {
         $0.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
         $0.clipsToBounds = true
         $0.layer.cornerRadius = 10
-        
+        $0.tintColor = .white
         return $0
-    }(UIButton())
+    }(UIButton(primaryAction: nextVCAction))
     
     lazy var arrowBtn: UIButton = {
         $0.frame = CGRect(x: mainView.bounds.maxX - mainView.bounds.height/2.3, y: mainView.bounds.height/2 - mainView.bounds.height/4 , width: mainView.bounds.height/2, height: mainView.bounds.height/2)
@@ -97,6 +104,14 @@ class ViewController: UIViewController {
         mainView.addSubview(nameLabel)
         mainView.addSubview(changeButton)
         mainView.addSubview(arrowBtn)
+        
+    }
+    
+    private func setUserData(name: String, surname :String, description :String) {
+        nameLabel.text = name + " " + surname
+        self.descriptionText = description
+        
+        
         
     }
 
