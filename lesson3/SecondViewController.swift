@@ -10,6 +10,8 @@ import UIKit
 
 class SecondViewController: UIViewController {
     
+    var delegate: MainViewControllerDelegate?
+    
     lazy var viewWidth = view.frame.width
     lazy var viewHeight = view.frame.height
     
@@ -68,9 +70,10 @@ class SecondViewController: UIViewController {
         $0.clipsToBounds = true
         $0.layer.cornerRadius = 20
         $0.backgroundColor = .systemBlue
-        
+        $0.tintColor = .white
         return $0
-    }(UIButton())
+    }(UIButton(primaryAction: saveBtnAction))
+    
     
     // MARK: Life cycle
     override func viewDidLoad() {
@@ -78,6 +81,13 @@ class SecondViewController: UIViewController {
         view.backgroundColor = .white
         
         addSubviews()
+    }
+    
+    // MARK: Actions
+    private lazy var saveBtnAction: UIAction = UIAction { [self] _ in
+        self.delegate?.setUserData(name: nameField.text ?? "", surname: surnameField.text ?? "", description: descriptionTextField.text ?? "")
+        
+        navigationController?.popViewController(animated: true)
     }
     
     // MARK: Private methods

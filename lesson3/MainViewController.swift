@@ -7,14 +7,19 @@
 
 // протокол создается в том классе который делигирует свои функции
 
-protocol
 
 import UIKit
 
-class MainViewController: UIViewController {
+protocol MainViewControllerDelegate {
+    func setUserData(name: String, surname: String, description: String)
+}
+
+
+class MainViewController: UIViewController, MainViewControllerDelegate {
 
     var descriptionText: String?
-    
+    var nameSurname: String?
+    var image: UIImage?
     
     lazy var viewWidth = view.frame.width
     lazy var viewHeight = view.frame.height
@@ -59,41 +64,37 @@ class MainViewController: UIViewController {
     
     lazy var arrowBtn: UIButton = {
         $0.frame = CGRect(x: mainView.bounds.maxX - mainView.bounds.height/2.3, y: mainView.bounds.height/2 - mainView.bounds.height/4 , width: mainView.bounds.height/2, height: mainView.bounds.height/2)
-        
         $0.setImage(.iconArrow.withRenderingMode(.alwaysTemplate), for: .normal)
         $0.tintColor = .black
-        
-        // 64 - высота
-        //
-        
+    
         return $0
-    } (UIButton(primaryAction: nextVCAction))
+    } (UIButton(primaryAction: LastVCAction))
     
     lazy var nextVCAction =  UIAction { [weak self] _ in
-        
         let secondVC = SecondViewController()
-        
+        secondVC.delegate = self
         self?.navigationController?.pushViewController(secondVC, animated: true)
+    }
+    
+    lazy var LastVCAction =  UIAction { [weak self] _ in
+        let thirdVC = ThirdViewController()
+    
+        thirdVC.descrtext = self?.descriptionText
+        thirdVC.nameSurn = self?.nameLabel.text
+        thirdVC.image = self?.profileImage.image
+        thirdVC.title = self?.nameLabel.text
+        
+        self?.navigationController?.pushViewController(thirdVC, animated: true)
         
     }
-        
-        
-    
     
     // MARK: Life cycle
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         title = "Главная"
      
-        print(viewWidth)
-        print(viewHeight)
-        print(mainView.frame.height)
-        
-        
         addSubviews()
-        
     }
 
     // MARK: Private methods
@@ -104,15 +105,11 @@ class MainViewController: UIViewController {
         mainView.addSubview(nameLabel)
         mainView.addSubview(changeButton)
         mainView.addSubview(arrowBtn)
-        
     }
     
-    private func setUserData(name: String, surname :String, description :String) {
+     func setUserData(name: String, surname: String, description: String) {
         nameLabel.text = name + " " + surname
         self.descriptionText = description
-        
-        
-        
     }
 
 }

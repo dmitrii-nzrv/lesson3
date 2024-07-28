@@ -9,9 +9,10 @@
 /* Begin PBXBuildFile section */
 		2835E34D2C5290DC003EA71C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2835E34C2C5290DC003EA71C /* AppDelegate.swift */; };
 		2835E34F2C5290DC003EA71C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2835E34E2C5290DC003EA71C /* SceneDelegate.swift */; };
-		2835E3512C5290DC003EA71C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2835E3502C5290DC003EA71C /* ViewController.swift */; };
+		2835E3512C5290DC003EA71C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2835E3502C5290DC003EA71C /* MainViewController.swift */; };
 		2835E3562C5290DD003EA71C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2835E3552C5290DD003EA71C /* Assets.xcassets */; };
 		2835E3592C5290DD003EA71C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2835E3572C5290DD003EA71C /* LaunchScreen.storyboard */; };
+		2846781A2C55E8CE00E40374 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284678192C55E8CE00E40374 /* ThirdViewController.swift */; };
 		28DF25BA2C55D77300FF589E /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DF25B92C55D77200FF589E /* SecondViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -19,10 +20,11 @@
 		2835E3492C5290DC003EA71C /* lesson3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lesson3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2835E34C2C5290DC003EA71C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2835E34E2C5290DC003EA71C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2835E3502C5290DC003EA71C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2835E3502C5290DC003EA71C /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		2835E3552C5290DD003EA71C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2835E3582C5290DD003EA71C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2835E35A2C5290DD003EA71C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		284678192C55E8CE00E40374 /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		28DF25B92C55D77200FF589E /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -58,8 +60,9 @@
 			children = (
 				2835E34C2C5290DC003EA71C /* AppDelegate.swift */,
 				2835E34E2C5290DC003EA71C /* SceneDelegate.swift */,
-				2835E3502C5290DC003EA71C /* ViewController.swift */,
+				2835E3502C5290DC003EA71C /* MainViewController.swift */,
 				28DF25B92C55D77200FF589E /* SecondViewController.swift */,
+				284678192C55E8CE00E40374 /* ThirdViewController.swift */,
 				2835E3552C5290DD003EA71C /* Assets.xcassets */,
 				2835E3572C5290DD003EA71C /* LaunchScreen.storyboard */,
 				2835E35A2C5290DD003EA71C /* Info.plist */,
@@ -138,7 +141,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				28DF25BA2C55D77300FF589E /* SecondViewController.swift in Sources */,
-				2835E3512C5290DC003EA71C /* ViewController.swift in Sources */,
+				2835E3512C5290DC003EA71C /* MainViewController.swift in Sources */,
+				2846781A2C55E8CE00E40374 /* ThirdViewController.swift in Sources */,
 				2835E34D2C5290DC003EA71C /* AppDelegate.swift in Sources */,
 				2835E34F2C5290DC003EA71C /* SceneDelegate.swift in Sources */,
 			);
