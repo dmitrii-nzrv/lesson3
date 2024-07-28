@@ -30,7 +30,10 @@ class ThirdViewController: UIViewController {
     lazy var nameLabel: UILabel = {
          // Автоматический расчет размера лейбла на основе содержимого
        
-        $0.frame = CGRect(x: 70, y: profileImage.frame.maxY+15, width: viewWidth, height: 20)
+       
+        $0.frame.size = CGSize(width: 111, height: 20)
+        $0.frame.origin.y = profileImage.frame.maxY+20
+        $0.center.x = view.frame.width/2
         
         return $0
     }(UILabel())
